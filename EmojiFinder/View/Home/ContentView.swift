@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var searchText: String = ""
     @State private var isRedacted: Bool = true
-    var emojis: [Emoji] = EmojiProvider.allEmojis()
+    @State private var emojis: [Emoji] = EmojiProvider.allEmojis()
     // variabel untuk bisa nampilkan sesuai search text nya
     var emojiSearchResults: [Emoji] {
         // guard : merupakan implementasi if doang
@@ -50,6 +50,14 @@ struct ContentView: View {
                     .asyncAfter(deadline: .now() + 2) {
                         isRedacted = false
                     }
+            }
+            .refreshable {
+                isRedacted = true
+                let newEmojiRow = EmojiProvider.allEmojis().randomElement()
+                emojis.insert(newEmojiRow!, at: 0)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    isRedacted = false
+                }
             }
             // menampilkan bar search dan handle agar tidak hilang
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "What emoji's that you're looking for ?")
