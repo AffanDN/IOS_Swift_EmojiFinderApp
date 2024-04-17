@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var searchText: String = ""
+    @State private var isRedacted: Bool = true
     var emojis: [Emoji] = EmojiProvider.allEmojis()
     // variabel untuk bisa nampilkan sesuai search text nya
     var emojiSearchResults: [Emoji] {
@@ -25,10 +26,31 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List(emojiSearchResults) { emoji in
-                EmojiRow(emoji: emoji)
+                // untuk subjek navigasi
+                NavigationLink {
+                    // tujuannya kemana
+                    EmojiDetail(emoji: emoji)
+                } label: {
+                    // apa yang dikliknya
+                    if isRedacted {
+                        EmojiRow(emoji: emoji)
+                            .redacted(reason: .placeholder)
+                    } else {
+                        EmojiRow(emoji: emoji)
+                    }
+                }
+
+//                EmojiRow(emoji: emoji)
 //                    .listRowSeparator(.hidden)
             }
             .navigationTitle("Emoji")
+            .onAppear{
+                // aktivitas yg dilakukan background tidak menganggu aktivitas lainnya
+                DispatchQueue.main
+                    .asyncAfter(deadline: .now() + 2) {
+                        isRedacted = false
+                    }
+            }
             // menampilkan bar search dan handle agar tidak hilang
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "What emoji's that you're looking for ?")
             .overlay {
