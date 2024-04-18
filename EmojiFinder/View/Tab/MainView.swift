@@ -2,7 +2,7 @@
 //  MainView.swift
 //  EmojiFinder
 //
-//  Created by Macbook Pro on 18/04/24.
+//  Created by AffanDN on 18/04/24.
 //
 
 import SwiftUI
