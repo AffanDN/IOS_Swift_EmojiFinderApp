@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E1042652BD0B3DB00FA4ED9 /* InfoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1042642BD0B3DB00FA4ED9 /* InfoBox.swift */; };
 		3E1F22EC2BCF68E30002DF29 /* EmojiFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1F22EB2BCF68E30002DF29 /* EmojiFinderApp.swift */; };
 		3E1F22EE2BCF68E30002DF29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1F22ED2BCF68E30002DF29 /* ContentView.swift */; };
 		3E1F22F02BCF68E40002DF29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E1F22EF2BCF68E40002DF29 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E1042642BD0B3DB00FA4ED9 /* InfoBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBox.swift; sourceTree = "<group>"; };
 		3E1F22E82BCF68E30002DF29 /* EmojiFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1F22EB2BCF68E30002DF29 /* EmojiFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiFinderApp.swift; sourceTree = "<group>"; };
 		3E1F22ED2BCF68E30002DF29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				3E1F23002BCF72AB0002DF29 /* EmojiRow.swift */,
+				3E1042642BD0B3DB00FA4ED9 /* InfoBox.swift */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				3E1F23092BCF86640002DF29 /* EmojiDetail.swift in Sources */,
 				3E1F23042BCF75C10002DF29 /* RandomColor.swift in Sources */,
 				3E1F23012BCF72AB0002DF29 /* EmojiRow.swift in Sources */,
+				3E1042652BD0B3DB00FA4ED9 /* InfoBox.swift in Sources */,
 				3E1F22EE2BCF68E30002DF29 /* ContentView.swift in Sources */,
 				3E1F22EC2BCF68E30002DF29 /* EmojiFinderApp.swift in Sources */,
 			);
